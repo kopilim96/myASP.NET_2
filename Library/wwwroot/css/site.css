@@ -285,6 +285,9 @@ body {
 }
     */
 
+/*
+    Index Page Image
+*/
 #index_image_libraryasset {
     background: url('../images/index_libraryasset.jpg') no-repeat center;
     background-size: 90% 90% ;
