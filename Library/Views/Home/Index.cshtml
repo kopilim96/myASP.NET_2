@@ -1,0 +1,50 @@
+﻿@{
+	ViewData["Title"] = "Godness Library Management System";
+}
+
+	<div class="mdl-grid">
+		<div class="col-md-4">
+			<div class="demo-card-square mdl-card mdl-shadow--2dp">
+					<div class="mdl-card__title mdl-card--expand" id="index_image_libraryasset">
+					</div>
+					<div class="mdl-card__supporting-text">
+						View all the Library Assets
+					</div>
+					<div class="mdl-card__actions mdl-card--border">
+						<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+						   asp-controller="Catelog" asp-action="Index">
+							Library Assets
+						</a>
+					</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="demo-card-square mdl-card mdl-shadow--2dp">
+				<div class="mdl-card__title mdl-card--expand" id="index_image_librarybranch">
+				</div>
+				<div class="mdl-card__supporting-text">
+					View all the Library Branch
+				</div>
+				<div class="mdl-card__actions mdl-card--border">
+					<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+					   asp-controller="LibraryBranch" asp-action="Index">
+						Library Branch
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="demo-card-square mdl-card mdl-shadow--2dp">
+				<div class="mdl-card__title mdl-card--expand" id="index_image_patrons"></div>
+				<div class="mdl-card__supporting-text">
+					View all the Patrons
+				</div>
+				<div class="mdl-card__actions mdl-card--border">
+					<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+					   asp-controller="Patrons" asp-action="Index">
+						Patrons
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,33 @@
+﻿@model Library.Models.Catelog.AssetIndexModel
+
+
+<div id="assets">
+	<h2>Library Catelog</h2> 
+	<div id="assetsTable">
+		<table class="table table-condensed" id="catelogIndexTable">
+			<thead>
+				<tr>
+					<th>Image</th>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Dewey Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var asset in @Model.asset)
+				{
+					<tr class="assetRow">
+						<td>
+							<a asp-controller="Catelog" asp-action="Details" asp-route-id="@asset.id" >
+								<img src="@asset.imageUrl" class="imageCell"/>
+							</a>
+						</td>
+						<td class="">@asset.title</td>
+						<td class="">@asset.author</td>
+						<td class="">@asset.deweyIndex</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

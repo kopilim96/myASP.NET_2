@@ -1,0 +1,47 @@
+﻿@model Library.Models.CheckOut.CheckOutModel
+
+@{
+	ViewBag.Title = Model.title;
+}
+
+<div class="container">
+	<div class="page-header">
+		<h3>CheckOut Item</h3>
+	</div>
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-md-3">
+				<img src="/@Model.imageUrl" class="detailImage" />
+			</div>
+
+			<div class="col-md-9">
+				<div class="detailInfo">
+					<p id="itemTitle">@Model.title</p>
+				</div>
+				<p></p>
+				@*
+					I am using the HTML Tag for conducting this Form
+					And the variable inside the Html Tag is variable will
+					use to submit and send to the method which control
+					this function.
+					Example in this Case,
+					It will send to Catelog Controller with the
+					-------- PlaceCheckOut -------- Method in a HTTP POST req
+
+				*@
+				<p>There are @Model.holdCount numbers of on Hold on this Item</p>
+				@using (Html.BeginForm("PlaceHold", "Catelog", FormMethod.Post))
+				{
+					@Html.HiddenFor(asset => asset.assetId)
+					<div>
+						Please insert the Patron's Library Card ID
+						@Html.TextBoxFor(a => a.libraryCardId)
+					</div>
+					<div>
+						<button type="submit" class="btn btn-success btn-lg">Place Hold</button>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</div>

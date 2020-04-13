@@ -1,0 +1,12 @@
+C:\Users\SCS\source\repos\LibraryServices\bin\Debug\netstandard2.0\LibraryServices.deps.json
+C:\Users\SCS\source\repos\LibraryServices\bin\Debug\netstandard2.0\LibraryServices.dll
+C:\Users\SCS\source\repos\LibraryServices\bin\Debug\netstandard2.0\LibraryServices.pdb
+C:\Users\SCS\source\repos\LibraryServices\bin\Debug\netstandard2.0\LibraryData.dll
+C:\Users\SCS\source\repos\LibraryServices\bin\Debug\netstandard2.0\LibraryData.pdb
+C:\Users\SCS\source\repos\LibraryServices\obj\Debug\netstandard2.0\LibraryServices.csprojAssemblyReference.cache
+C:\Users\SCS\source\repos\LibraryServices\obj\Debug\netstandard2.0\LibraryServices.csproj.CoreCompileInputs.cache
+C:\Users\SCS\source\repos\LibraryServices\obj\Debug\netstandard2.0\LibraryServices.AssemblyInfoInputs.cache
+C:\Users\SCS\source\repos\LibraryServices\obj\Debug\netstandard2.0\LibraryServices.AssemblyInfo.cs
+C:\Users\SCS\source\repos\LibraryServices\obj\Debug\netstandard2.0\LibraryServices.csproj.CopyComplete
+C:\Users\SCS\source\repos\LibraryServices\obj\Debug\netstandard2.0\LibraryServices.dll
+C:\Users\SCS\source\repos\LibraryServices\obj\Debug\netstandard2.0\LibraryServices.pdb
