@@ -422,3 +422,5 @@ C:\Users\SCS\source\repos\Library\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
 C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Library.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Library.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\Patrons\Index.cshtml.g.cs
+C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\Patrons\PatronDetails.cshtml.g.cs

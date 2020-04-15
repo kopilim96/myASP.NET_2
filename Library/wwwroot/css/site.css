@@ -42,16 +42,7 @@ button.accept-policy {
 html {
   position: relative;
   min-height: 100%;
-}
-
-html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+  font-family: 'Brush Script Std';
 }
 
 .page-content {
@@ -60,9 +51,6 @@ html {
     margin: 10px auto;
 }
 
-.page-heading {
-    color: #e9e8e7;
-}
 
 .splash {
     /*background-image: url("/images/catalog.png"); */
@@ -123,7 +111,7 @@ html {
 }
 
 #assets {
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .customTable td {
@@ -135,10 +123,19 @@ html {
     font-weight: bold;
 }
 
+/*
+    Patrons Main Page Table 
+*/
 .customTable th {
     text-align: left;
     color: black;
     font-size: 1.3em;
+}
+.customTable td {
+    text-align: center;
+}
+#custom-patron-libraryBranchName {
+    text-align: left;
 }
 
 .imageCell {

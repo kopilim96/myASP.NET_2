@@ -1,0 +1,69 @@
+﻿@model Library.Models.Patrons.PatronsDetailModel;
+
+@{
+	ViewData["Title"] = "Patron Detail";
+	ViewData["PatronFullName"] = Model.firstName + " " + Model.lastName;
+}
+
+<div class="container">
+	<h3 class="custom-patron-details-fullname">@ViewData["PatronFullName"]</h3>
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-md-4">
+				<h4>Patrons Details</h4>
+				<div class="patronContact">
+					<p>Library Card ID : @Model.libraryCardId</p>
+					<p>Address : @Model.address</p>
+					<p>Telephone : @Model.telephone</p>
+					<p>Member Since: @Model.memberSince</p>
+					<p>Library Branch : @Model.libraryBranchName</p>
+					@if (Model.overdueFee > 0)
+					{
+						<p style="color:red">Current Overdue Fees : @Model.overdueFee</p>
+					}
+					else { 
+						<p>Current Overdue Fees :  -  </p>
+					}
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4>Assets Currently CHecked Out</h4>
+				@if (Model.assetCheckout.Any())
+				{
+					<div id="patronAssets">
+						@foreach (var checkout in Model.assetCheckout)
+						{
+							<li>
+								@checkout.LibraryAsset.title - (LibraryAsset ID: @checkout.LibraryAsset.id)
+								<ul>
+									<li>Since: @checkout.since</li>
+									<li>Until: @checkout.until</li>
+								</ul>
+							</li>
+						}
+					</div>
+				}
+				else { 
+					<p>No item currently checked out. Dump </p>
+				}
+			</div>
+			<div class="col-md-4">
+				<h4>Asset Currently On Hold</h4>
+				@if (Model.hold.Any())
+				{
+					<div id="patronHolds">
+						<ul>
+							@foreach (var hold in Model.hold)
+							{
+								<li>@hold.LibraryAsset.title - Placed @hold.HoldPlaced.ToString("yyyy-dd-MM - HH:mm")</li>
+							}
+						</ul>
+					</div>
+				}
+				else { 
+					<p>No item is on Hold</p>
+				}
+			</div>
+		</div>
+	</div>
+</div>

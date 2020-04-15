@@ -14,7 +14,11 @@ namespace LibraryData
 		Patron getPatron(int patronId);
 
 		//Get collection of Patron, Checkout, CheckoutHistory, Hold
-		IEnumerable<Patron> getAllPatron(int patronId);
+		//In this service
+		//getAllPatron method is used to get the verification of 
+		//which libraryBranch he registered with, and
+		//with the libraryCard
+		IEnumerable<Patron> getAllPatron();
 		IEnumerable<Checkouts> getAllCheckout(int patronId);
 		IEnumerable<CheckoutHistory> getAllCheckOutHistory(int patronId);
 		IEnumerable<Holds> getAllHold(int patronId);

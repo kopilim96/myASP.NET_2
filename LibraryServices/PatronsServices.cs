@@ -22,31 +22,45 @@ namespace LibraryServices
 		}
 		public Patron getPatron(int patronId)
 		{
+			return getAllPatron()
+				.FirstOrDefault(p => p.patronId == patronId);
+		}
+		public IEnumerable<Patron> getAllPatron()
+		{
 			return _context.Patrons
 				.Include(p => p.libraryCard)
-				.Include(p => p.LibraryBranch)
-				.FirstOrDefault(p => p.patronId == patronId);
+				.Include(p => p.LibraryBranch);
 		}
 
 		public IEnumerable<Checkouts> getAllCheckout(int patronId)
 		{
-			throw new NotImplementedException();
+			var cardId = getPatron(patronId).libraryCard.id;
+			return _context.checkOut
+				.Include(c => c.LibraryAsset)
+				.Include(c => c.LibraryCard)
+				.Where(c => c.LibraryCard.id == cardId);
 		}
 
 		public IEnumerable<CheckoutHistory> getAllCheckOutHistory(int patronId)
 		{
-			throw new NotImplementedException();
+			var cardId = getPatron(patronId).libraryCard.id;
+			return _context.checkOutHistory
+				.Include(co => co.libraryAsset)
+				.Include(co => co.LibraryCard)
+				.Where(co => co.LibraryCard.id == cardId)
+				.OrderBy(co => co.checkOut);
 		}
 
 		public IEnumerable<Holds> getAllHold(int patronId)
 		{
-			throw new NotImplementedException();
+			var cardId = getPatron(patronId).libraryCard.id;
+			return _context.hold
+				.Include(h => h.LibraryAsset)
+				.Include(h => h.LibraryCard)
+				.Where(h => h.LibraryCard.id == cardId)
+				.OrderByDescending(h => h.HoldPlaced);
 		}
 
-		public IEnumerable<Patron> getAllPatron(int patronId)
-		{
-			throw new NotImplementedException();
-		}
 
 	}
 }
