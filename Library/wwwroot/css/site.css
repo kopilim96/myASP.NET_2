@@ -42,13 +42,22 @@ button.accept-policy {
 html {
   position: relative;
   min-height: 100%;
+  min-width: 100%;
   font-family: 'Brush Script Std';
 }
 
 .page-content {
     padding: 10px;
-    height: 100%;
+    height: 100% auto;
+    width: 85%;
     margin: 10px auto;
+}
+
+footer{
+    position: absolute;
+    margin-top: 130px;
+    margin-bottom: 0;
+    width: 100%;
 }
 
 
@@ -160,7 +169,8 @@ html {
 }
 
 #itemTitle {
-    font-size: 2.3em;
+    font-size: 30px;
+    padding: 3px;
 }
 
 #itemAuthor {
@@ -189,9 +199,8 @@ html {
 }
 
 .detailInfo {
-    margin-top:30px;
     padding: 10px;
-    font-size: 18px;
+    font-size: 14px;
     color: #555;
 }
 .itemLabel {
@@ -202,14 +211,16 @@ html {
     font-size: 16px;
 }
 
+/*
+   Library Branch Detail Page 
+*/
+
+.branch-detail-container {
+    margin: 10px;
+}
 
 .detailHeading {
     padding: 10px;
-}
-
-#branchDescription {
-    width: 500px;
-    padding: 18px 0 12px 4px;
 }
 
 .branchContact {
@@ -278,3 +289,42 @@ html {
     background-size: 90% 90% ;
 }
 
+/*
+    Library Branch Index
+*/
+#branchIndex {
+    margin: 10px;
+}
+
+.libraryBranch-index-image-display {
+    padding: 2px;
+    height: 320px;
+    width: 270px;
+}
+
+.librarybranch-index-data-display {
+    margin: 3px;
+}
+
+#branchTitle {
+    font-size: 30px;
+    font-family: Lato;
+    font-weight: bold;
+    padding: 2px;
+}
+#branchOthersData {
+    font-size: 24px;
+    padding: 1px;
+}
+
+.branchDetailImage {
+    padding: 10px;
+    height: 400px;
+    width: 320px;
+}
+
+.btn-in-branchIndex {
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

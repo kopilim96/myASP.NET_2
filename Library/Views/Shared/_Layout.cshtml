@@ -20,23 +20,24 @@
 				</span>
 				<div class="mdl-layout-spacer"></div>
 				<!--Navigation Bar Link-->
-				<a class="mdl-navigation__link" href="#">Register</a>
-				<a class="mdl-navigation__link" href="#">Admin</a>
+				<a class="mdl-navigation__link" asp-controller="Catelog" asp-action="Index">Asset</a>
+				<a class="mdl-navigation__link" asp-controller="LibraryBranch" asp-action="Index">Branch</a>
+				<a class="mdl-navigation__link" asp-controller="Patrons" asp-action="Index">Patron</a>
 			</div>
 		</header>
 
 		<div class="page-content">
-			<main role="main">
-				@RenderBody()
-			</main>
+			@RenderBody()
 		</div>
 	</div>
 
-	<footer class="mdl-mini-footer">
-		<div class="mdl-mini-footer__left-section">
-			&copy; 2020 - Godness Library Management System
-		</div>
-	</footer>
+	<div class="footer-container">
+		<footer class="mdl-mini-footer">
+			<div class="mdl-mini-footer__left-section">
+				&copy; 2020 - Godness Library Management System
+			</div>
+		</footer>
+	</div>
 
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

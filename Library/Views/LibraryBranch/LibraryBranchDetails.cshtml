@@ -1,0 +1,55 @@
+﻿@model Library.Models.LibraryBranch.LibraryBranchDetailModel;
+
+@{
+	ViewBag.Title = Model.branchName;
+}
+
+<h3 class="detailHeading">@ViewBag.Title - Branch </h3>
+<div class="branch-detail-container">
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-md-4">
+				<img src="/@Model.imageUrl" class="branchDetailImage" />
+			</div>
+			<div class="col-md-4">
+				<p id="branchTitle">@ViewBag.Title</p>
+				<p id="branchOthersData">Library Branch Telephone:</p>
+				<p id="branchOthersData">@Model.branchPhone</p>
+				<p id="branchOthersData">Description:</p>
+				<p id="branchOthersData">@Model.description</p>
+				<br />
+				<a class="btn btn-lg btn-info btn-in-branchIndex" role="button" asp-controller="Home" asp-action="Index">Return</a>
+			</div>
+			<div class="col-md-4">
+				@*Use the same Css from branchTitle*@
+				<p id="branchTitle">TimeTable</p>
+				<ul>
+					@foreach (var time in Model.hourOpen)
+					{
+						<li>@time</li>
+					}
+				</ul>
+				@**
+					<table>
+						<thead>
+							<tr>
+								<th>Days</th>
+								<th>Opening Time</th>
+								<th>Closing Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var detail in Model.hourOpen) {
+								<tr>
+									<th>
+										@detail.ToString(DateTime.);
+									</th>
+								</tr>
+							}
+						</tbody>
+					</table>
+						**@
+			</div>
+		</div>
+	</div>
+</div>

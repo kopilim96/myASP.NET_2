@@ -424,3 +424,5 @@ C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Library.MvcApplication
 C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Library.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\Patrons\Index.cshtml.g.cs
 C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\Patrons\PatronDetails.cshtml.g.cs
+C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\LibraryBranch\Index.cshtml.g.cs
+C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\LibraryBranch\LibraryBranchDetails.cshtml.g.cs

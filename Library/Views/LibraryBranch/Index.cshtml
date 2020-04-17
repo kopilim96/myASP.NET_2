@@ -1,0 +1,41 @@
+﻿@model Library.Models.LibraryBranch.LibraryBranchIndexModel;
+
+@{
+	ViewData["Title"] = "Library Branch Index";
+}
+
+<div id="branchIndex" style="min-width: 100%;">
+	<h3>@ViewData["Title"]</h3>
+
+	@foreach (var branches in Model.branch)
+	{
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-md-4">
+					<!--Image Display and Cliclable append to Detail Page-->
+					<a asp-controller="LibraryBranch" asp-action="LibraryBranchDetails" asp-route-id="@branches.branchId">
+						<img src="@branches.imageUrl" class="libraryBranch-index-image-display" />
+					</a>
+				</div>
+				<div class="col-md-8">
+					<div class="librarybranch-index-data-display">
+						<p id="branchTitle">@branches.branchName</p>
+						@if (branches.isOpen)
+						{
+							<p id="branchOthersData">Operation    : Opened</p>
+						}
+						else
+						{
+							<p id="branchOthersData">Operation    : Closed</p>
+						}
+						<p id="branchOthersData">Telephone    : @branches.branchPhone</p>
+						<p id="branchOthersData">Address      : @branches.address</p>
+						<p id="branchOthersData">Total Assets : @branches.numberOfAsset</p>
+						<p id="branchOthersData">Total Patron : @branches.numberOfPatron</p>
+					</div>
+					<a class="btn btn-lg btn-success btn-in-branchIndex" role="button" asp-controller="LibraryBranch" asp-action="LibraryBranchDetails" asp-route-id="@branches.branchId">Details</a>
+				</div>
+			</div>
+		</div>
+	}
+</div>

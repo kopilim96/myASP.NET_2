@@ -1,132 +1,213 @@
 ﻿@model Library.Models.Catelog.AssetDetailModel
 
+@{
+	ViewBag.Title = Model.title;
+}
+
 <div class="container">
 	<div class="page-header clearfix detailHeading">
 		<h2 class="text-muted">View Library Item</h2>
 	</div>
 
 
-<div class="jumbotron">
-	<div class="row">
-		<div class="col-md-4">
-			<div>
-				<img src="/@Model.imageUrl" class="detailImage" />
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-md-4">
+				<div>
+					<img src="/@Model.imageUrl" class="detailImage" />
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="column">
+					<p id="itemTitle">@Model.title</p>
+					<p id="itemAuthor">@Model.author</p>
+					<div class="row">
+						<div class="col-md-6">
+							<p id="itemStatus">@Model.status</p>
+							<p id="itemType">@Model.type</p>
+							<p id="itemLocation">@Model.currentBranch</p>
+						</div>
+						<div class="col-md-6">
+							@if (Model.type == "Video")
+							{
+								<div class="col-md-4 detailInfo">
+									<table>
+										<tr>
+											<td class="itemLable">ISBN: </td>
+											<td class="itemValue"> - </td>
+										</tr>
+										<tr>
+											<td class="itemLable">Dewey Index Number: </td>
+											<td class="itemValue"> - </td>
+										</tr>
+										<tr>
+											<td class="itemLable">Replacement Cost: </td>
+											<td class="itemValue">@Model.cost</td>
+										</tr>
+									</table>
+								</div>
+							}
+							else
+							{
+								<div class="col-md-4 detailInfo">
+									<table>
+										<tr>
+											<td class="itemLable">ISBN: </td>
+											<td class="itemValue">@Model.isbn</td>
+										</tr>
+										<tr>
+											<td class="itemLable">Dewey Index Number: </td>
+											<td class="itemValue">@Model.deweyIndex</td>
+										</tr>
+										<tr>
+											<td class="itemLable">Replacement Cost: </td>
+											<td class="itemValue">$ @Model.cost</td>
+										</tr>
+									</table>
+								</div>
+							}
+						</div>
+					</div>
+					@if (Model.status == "Checked Out")
+					{
+						<p id="itemPatron">Checked Out By: @Model.patronName</p>
+						<a class="btn btn-lg btn-success" role="button" asp-controller="Catelog" asp-action="CheckIn" asp-route-id="@Model.assetId">Check In</a>
+						<a class="btn btn-lg btn-warning" role="button" asp-controller="Catelog" asp-action="Hold" asp-route-id="@Model.assetId">Place Hold</a>
+
+					}
+
+					@if (Model.status == "Available")
+					{
+						<p>
+							<a class="btn btn-lg btn-info" role="button" asp-controller="Catelog" asp-action="CheckOut" asp-route-id="@Model.assetId">Check Out</a>
+						</p>
+					}
+
+					@if (Model.status == "Lost")
+					{
+						<p>Someone fucking lose this Book.. Son of Bitch </p>
+						<p>
+							<a class="btn btn-lg btn-danger" role="button" asp-controller="Catelog" asp-action="MarkFound" asp-route-id="@Model.assetId">Found</a>
+						</p>
+					}
+				</div>
+			</div>
+			@*
+					<div class="col-md-4">
+						<p id="itemTitle">@Model.title</p>
+						<p id="itemAuthor">@Model.author</p>
+						<p id="itemStatus">@Model.status</p>
+						<p id="itemType">@Model.type</p>
+						<p id="itemLocation">@Model.currentBranch</p>
+
+						@if (Model.status == "Checked Out")
+						{
+							<p id="itemPatron">Checked Out By: @Model.patronName</p>
+							<a class="btn btn-lg btn-success" role="button" asp-controller="Catelog" asp-action="CheckIn" asp-route-id="@Model.assetId">Check In</a>
+							<a class="btn btn-lg btn-warning" role="button" asp-controller="Catelog" asp-action="Hold" asp-route-id="@Model.assetId">Place Hold</a>
+
+						}
+
+						@if (Model.status == "Available")
+						{
+							<p>
+								<a class="btn btn-lg btn-info" role="button" asp-controller="Catelog" asp-action="CheckOut" asp-route-id="@Model.assetId">Check Out</a>
+							</p>
+						}
+
+						@if (Model.status == "Lost")
+						{
+							<p>Someone fucking lose this Book.. Son of Bitch </p>
+							<p>
+								<a class="btn btn-lg btn-danger" role="button" asp-controller="Catelog" asp-action="MarkFound" asp-route-id="@Model.assetId">Found</a>
+							</p>
+						}
+					</div>
+					@if (Model.type == "Video")
+					{
+						<div class="col-md-4 detailInfo">
+							<table>
+								<tr>
+									<td class="itemLable">ISBN: </td>
+									<td class="itemValue"> - </td>
+								</tr>
+								<tr>
+									<td class="itemLable">Dewey Index Number: </td>
+									<td class="itemValue"> - </td>
+								</tr>
+								<tr>
+									<td class="itemLable">Replacement Cost: </td>
+									<td class="itemValue">@Model.cost</td>
+								</tr>
+							</table>
+						</div>
+					}
+					else
+					{
+						<div class="col-md-4 detailInfo">
+							<table>
+								<tr>
+									<td class="itemLable">ISBN: </td>
+									<td class="itemValue">@Model.isbn</td>
+								</tr>
+								<tr>
+									<td class="itemLable">Dewey Index Number: </td>
+									<td class="itemValue">@Model.deweyIndex</td>
+								</tr>
+								<tr>
+									<td class="itemLable">Replacement Cost: </td>
+									<td class="itemValue">$ @Model.cost</td>
+								</tr>
+							</table>
+						</div>
+					}
+				*@
+				</div>
+		</div> <!---ENd of Div Jumbotron-->
+
+		<div class="row">
+			<div class="col-lg-6">
+				<h4>CheckOut History</h4>
+				<table class="table table-bordered table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Date Loaned</th>
+							<th>Date Returned</th>
+							<th>Card ID</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var checkout in @Model.checkoutHistories)
+						{
+							<tr>
+								<td>@checkout.checkOut</td>
+								<td>@checkout.checkIn</td>
+								<td>@checkout.LibraryCard.id</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-lg-6">
+				<h4>on Hold</h4>
+				<table class="table table-bordered table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Hold Placed</th>
+							<th>Patron Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var hold in @Model.currentHold)
+						{
+							<tr>
+								<td>@hold.holdPlaced</td>
+								<td>@hold.patronName</td>
+							</tr>
+						}
+					</tbody>
+				</table>
 			</div>
 		</div>
-		<div class="col-md-4">
-			<p id="itemTitle">@Model.title</p>
-			<p id="itemAuthor">@Model.author</p>
-			<p id="itemStatus">@Model.status</p>
-			<p id="itemType">@Model.type</p>
-			<p id="itemLocation">@Model.currentBranch</p>
-
-			@if (Model.status == "Checked Out")
-			{
-				<p id="itemPatron">Checked Out By: @Model.patronName</p>
-				<a class="btn btn-lg btn-success" role="button" asp-controller="Catelog" asp-action="CheckIn" asp-route-id="@Model.assetId">Check In</a>
-				<a class="btn btn-lg btn-warning" role="button" asp-controller="Catelog" asp-action="Hold" asp-route-id="@Model.assetId">Place Hold</a>
-
-			}
-
-			@if (Model.status == "Available")
-			{
-				<p>
-					<a class="btn btn-lg btn-info" role="button" asp-controller="Catelog" asp-action="CheckOut" asp-route-id="@Model.assetId">Check Out</a>
-				</p>
-			}
-
-			@if (Model.status == "Lost")
-			{
-				<p>Someone fucking lose this Book.. Son of Bitch </p>
-				<p>
-					<a class="btn btn-lg btn-danger" role="button" asp-controller="Catelog" asp-action="MarkFound" asp-route-id="@Model.assetId">Found</a>
-				</p>
-			}
-			</div>
-			@if (Model.type == "Video")
-			{
-				<div class="col-md-4 detailInfo">
-					<table>
-						<tr>
-							<td class="itemLable">ISBN: </td>
-							<td class="itemValue"> - </td>
-						</tr>
-						<tr>
-							<td class="itemLable">Dewey Index Number: </td>
-							<td class="itemValue"> - </td>
-						</tr>
-						<tr>
-							<td class="itemLable">Replacement Cost: </td>
-							<td class="itemValue">@Model.cost</td>
-						</tr>
-					</table>
-				</div>
-			}
-			else
-			{
-				<div class="col-md-4 detailInfo">
-					<table>
-						<tr>
-							<td class="itemLable">ISBN: </td>
-							<td class="itemValue">@Model.isbn</td>
-						</tr>
-						<tr>
-							<td class="itemLable">Dewey Index Number: </td>
-							<td class="itemValue">@Model.deweyIndex</td>
-						</tr>
-						<tr>
-							<td class="itemLable">Replacement Cost: </td>
-							<td class="itemValue">$ @Model.cost</td>
-						</tr>
-					</table>
-				</div>
-			}
-	</div>
-</div> <!---ENd of Div Jumbotron-->
-
-<div class="row">
-	<div class="col-lg-6">
-		<h4>CheckOut History</h4>
-		<table class="table table-bordered table-hover table-condensed">
-			<thead>
-				<tr>
-					<th>Date Loaned</th>
-					<th>Date Returned</th>
-					<th>Card ID</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach (var checkout in @Model.checkoutHistories)
-				{
-					<tr>
-						<td>@checkout.checkOut</td>
-						<td>@checkout.checkIn</td>
-						<td>@checkout.LibraryCard.id</td>
-					</tr>
-				}
-			</tbody>
-		</table>
-	</div>
-
-	<div class="col-lg-6">
-		<h4>on Hold</h4>
-		<table class="table table-bordered table-hover table-condensed">
-			<thead>
-				<tr>
-					<th>Hold Placed</th>
-					<th>Patron Name</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach (var hold in @Model.currentHold)
-				{
-					<tr>
-						<td>@hold.holdPlaced</td>
-						<td>@hold.patronName</td>
-					</tr>
-				}
-			</tbody>
-		</table>
-	</div>
-</div>
-</div> <!---End of Container--->
+	</div> <!---End of Container--->
