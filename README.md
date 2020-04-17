@@ -12,11 +12,16 @@ Learning from this Project
  
  *The CSS Code is pretty messed up bcoz I copy some of the code from Wes and Online Templates..*
  
- * Note1: There will be a lot of improvement to be made such as *
+ * Note1: There will be a lot of improvement to be made such as
+ 
    *- Login/Register Services for Patron*
+   
    *- Admin Service Page -> Admin CRUD Assets and so on*
+   
    *- The Interface and Style of course.*
 
+
+I watch the video series from Wes Doyle and I gonna give Credit to Him
 
 # Thanks to Wes Doyle
 
