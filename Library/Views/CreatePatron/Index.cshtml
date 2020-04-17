@@ -1,0 +1,34 @@
+﻿@model LibraryData.Models.Patron
+@{
+	ViewData["Title"] = "Register Patron";
+}
+
+<div class="page-content">
+	<h3>Register Patron</h3>
+	<br />
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-md-4">
+				<p id="createPatron-lable">First Name</p>
+				<p id="createPatron-lable">Last Name</p>
+				<p id="createPatron-lable">Address</p>
+				<p id="createPatron-lable">Date of Birth</p>
+				<p id="createPatron-lable">Phone No.</p>
+				<p id="createPatron-lable">Registerd Library Card ID</p>
+				<p id="createPatron-lable">Library Branch ID</p>
+			</div>
+			<div class="col-md-8">
+				<p>@Html.EditorFor(Model => Model.firstName)</p>
+				<p>@Html.EditorFor(model => model.lastName)</p>
+				<p>@Html.EditorFor(model => model.address)</p>
+				<p>@Html.EditorFor(model => model.dateOfBirth)</p>
+				<p>@Html.EditorFor(model => model.phone)</p>
+				<p>@Html.EditorFor(model => model.libraryCard.id)</p>
+				<p>@Html.EditorFor(model => model.LibraryBranch.id)</p>
+			</div>
+		</div>
+		<div class="row">
+			<a class="btn btn-lg btn-success" role="button" asp-controller="CreatePatron" asp-action="Create">Add Patron</a>
+		</div>
+	</div>
+</div>

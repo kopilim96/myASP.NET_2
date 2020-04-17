@@ -426,3 +426,4 @@ C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\Patrons\In
 C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\Patrons\PatronDetails.cshtml.g.cs
 C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\LibraryBranch\Index.cshtml.g.cs
 C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\LibraryBranch\LibraryBranchDetails.cshtml.g.cs
+C:\Users\SCS\source\repos\Library\obj\Debug\netcoreapp3.1\Razor\Views\CreatePatron\Index.cshtml.g.cs
