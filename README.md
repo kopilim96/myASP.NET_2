@@ -7,7 +7,7 @@ Learning from this Project
  - Linq
  - Deal with different class library
  - A little knowledge of HTML and CSS
- - MSSQL Studio
+ - Local DB with MSSQL Studio
  
  
  *The CSS Code is pretty messed up bcoz I copy some of the code from Wes and Online Templates..*
